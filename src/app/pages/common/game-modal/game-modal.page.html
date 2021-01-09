@@ -1,0 +1,40 @@
+<ion-content color="primary">
+  <div class="close">
+    <ion-icon name="close-outline" (click)="onClose()"></ion-icon>
+  </div>
+  <div class="game-container">
+    <div class="title">{{game.name}}</div>
+    <div class="category">{{game.category}}</div>
+    <p class="description">{{game.description}}</p>
+    <div
+      class="game-perf"
+      *ngIf="gamePerf$ | async as gamePerformance; else gamePerfLoading"
+    >
+      <div class="perf-header">
+        GAMES PLAYED: {{gamePerformance.gamesPlayed}}
+      </div>
+      <div class="game-entry-container">
+        <div class="game-entry" *ngFor="let entry of gameEntries$ | async">
+          <div class="date">
+            {{entry.date.seconds * 1000 | date: 'MMMM dd'}}
+          </div>
+          <div class="score">{{entry.score}}</div>
+        </div>
+      </div>
+    </div>
+    <ng-template #gamePerfLoading>
+      <div class="game-perf">
+        <p>Seems like you haven't played this game before...</p>
+      </div>
+    </ng-template>
+    <ion-button
+      color="tertiary"
+      class="action"
+      expand="full"
+      [routerLink]="[game.code]"
+      routerDirection="forward"
+      (click)="onClose()"
+      >PLAY</ion-button
+    >
+  </div>
+</ion-content>

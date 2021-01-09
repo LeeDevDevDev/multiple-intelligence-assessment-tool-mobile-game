@@ -1,0 +1,63 @@
+ion-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+
+  ion-icon {
+    font-size: 32px;
+  }
+}
+img {
+  position: absolute;
+  object-fit: cover;
+  height: 100vh;
+  filter: brightness(25%);
+  z-index: -1;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+  height: 90vh;
+}
+
+.title {
+  font-size: 36px;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.game-perf {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.perf-header {
+  width: 100%;
+  font-size: 24px;
+  margin: 5% 0;
+  height: 20%;
+}
+
+.game-entry {
+  display: flex;
+
+  .score {
+    margin-left: auto;
+  }
+}
+
+.action {
+  margin-top: auto;
+  width: 100%;
+}

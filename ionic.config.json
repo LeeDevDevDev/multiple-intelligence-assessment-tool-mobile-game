@@ -1,5 +1,7 @@
 {
   "name": "thesis-game",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

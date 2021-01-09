@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mithesis-d4feb": {
+      "hosting": {
+        "app": [
+          "mithesis-d4feb"
+        ]
+      }
+    }
+  }
+}

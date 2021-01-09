@@ -1,0 +1,41 @@
+<ion-content type="">
+  <div class="main">
+    <div class="logo">
+      <img [src]="logoSrc" />
+    </div>
+
+    <form
+      class="login-form"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSignInClick()"
+    >
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email" id="email"></ion-input>
+        <ion-note
+          *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.dirty"
+        >
+          This is not a valid email.
+        </ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          type="password"
+          formControlName="password"
+          id="password"
+        ></ion-input>
+        <ion-note
+          *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.dirty"
+        >
+          This is not a valid password
+        </ion-note>
+      </ion-item>
+
+      <ion-button #submit color="tertiary" type="submit">Sign in</ion-button>
+
+      <hr />
+    </form>
+  </div>
+</ion-content>

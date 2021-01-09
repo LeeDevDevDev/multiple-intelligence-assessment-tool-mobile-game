@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-item>
+    <ion-label>CATEGORY</ion-label>
+    <ion-select
+      interface="popover"
+      placeholder="All"
+      value="''"
+      [(ngModel)]="category"
+      (ionChange)="setCategory()"
+    >
+      <ion-select-option value="">All</ion-select-option>
+      <ion-select-option value="mathematics">Math</ion-select-option>
+      <ion-select-option value="visual">Visual</ion-select-option>
+      <ion-select-option value="music">Music</ion-select-option>
+      <ion-select-option value="linguistic">Linguistic</ion-select-option>
+      <ion-select-option value="interpersonal">Interpersonal</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-header>
+<ion-content class="main-body">
+  <div class="main-body">
+    <div class="game" *ngFor="let game of games$ | async">
+      <div class="game-body" (click)="openGameModal(game)">
+        <div class="game-title">{{game.name}}</div>
+        <div class="game-description">{{game.category}}</div>
+        <!--<div class="game-actions">
+          <ion-button expand="full" color="light" fill="clear">play</ion-button>
+        </div>-->
+      </div>
+      <img [src]="game.photoUrl" />
+    </div>
+  </div>
+</ion-content>
